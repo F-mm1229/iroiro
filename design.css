@@ -46,3 +46,17 @@ body {
     width: 28%;
     float: left;
 }
+.grid {
+    height: 20%;
+    width: 80%;
+    margin: 100% auto;
+    /* border: 1px solid blueviolet; */
+}
+button {
+    height: 2rem;
+    width: 20%;
+    background-color: white;
+    border: 1px solid #545E75;
+    border-radius: 20%;
+    margin-left: 10%;
+}
