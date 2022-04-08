@@ -1,0 +1,48 @@
+body {
+    height: 750px;
+    width: 100%;
+}
+
+.header {
+    height: 30px;
+    width: 100%;
+}
+.header h1 {
+    color: #545E75;
+    margin-left: 3rem;
+}
+
+.color-section {
+    height: 100%;
+    width: 70%;
+    float: left;
+}
+.contents {
+    height: 80%;
+    width: 80%;
+    margin: 5% 10% 10% 10%;
+}
+.color {
+    height: 48%;
+    width: 48%;
+    float: left;
+    margin: 1% 1%;
+}
+.color-1 {
+    background-color: #c8ffbe;
+}
+.color-2 {
+    background-color: #edffab;
+}
+.color-3 {
+    background-color: #92bcea;
+}
+.color-4 {
+    background-color: #afb3f7;
+}
+
+.setting-section {
+    height: 100%;
+    width: 28%;
+    float: left;
+}
