@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iroiro</title>
     <link rel="stylesheet" href="design.css">
+    <script type="text/javascript" src="iroiro.js" defer></script>
 </head>
 <body>
-    <script type="text/javascript" src="iroiro.js"></script>
     
     <div class="header">
         <h1>色イロ</h1>
@@ -16,10 +16,10 @@
 
     <div class="color-section">
         <div class="contents">
-            <div class="color color-1"></div>
-            <div class="color color-2"></div>
-            <div class="color color-3"></div>
-            <div class="color color-4"></div>
+            <div class="color color-1" id="color-1"></div>
+            <div class="color color-2" id="color-2"></div>
+            <div class="color color-3" id="color-3"></div>
+            <div class="color color-4" id="color-4"></div>
         </div>
     </div>
 
@@ -29,7 +29,7 @@
             <button type="button">グリッド2</button>
         </div>
         <div class="generate">
-            <button type="button">色を変更</button>
+            <button type="button" id="target">色を変更</button>
         </div>
     </div>
     
