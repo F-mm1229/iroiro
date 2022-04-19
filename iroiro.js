@@ -1,4 +1,4 @@
-var color = [];         // カラーコードを格納
+var color = [];         //カラーコードを格納
 let count = 0;          //generateした回数
 let backcount = 0;      //reverseした回数
 let colorNum = 4;       //カラーの数（デフォルトは4）
@@ -50,8 +50,8 @@ document.getElementById('grid4').addEventListener('click', function () {
     }
 });
 
-// 変更ボタンで色をランダムに変更する
-document.getElementById('generate').addEventListener('click', function () {
+// 色をランダムに生成
+function generate() {
     count += 1;
     backcount = 0;
     for (let i = 1; i <= colorNum; i++) {
@@ -61,16 +61,25 @@ document.getElementById('generate').addEventListener('click', function () {
     }
     console.log(color);
     console.log(count);
-});
+};
 
-// 戻るボタンで前に出た色に戻る
-document.getElementById('reverse').addEventListener('click', function () {
+// 前に出た色に戻る
+function reverse() {
     backcount += 1;
     for (let i = 1; i <= colorNum; i++) {
         document.getElementById('color-' + i).style.background = '#' + color[color.length - ((colorNum + 1 - i) + colorNum * backcount)];
     }
     if (backcount >= count - 1) return;
     console.log(backcount);
-})
+};
 
+// リロードされた時
+window.onload = function () {
+    generate();
+}
 
+// ボタン：色を変更
+document.getElementById('generate').addEventListener('click', generate);
+
+// ボタン：戻る
+document.getElementById('reverse').addEventListener('click', reverse);
