@@ -8,6 +8,7 @@ document.getElementById('grid1').addEventListener('click', function () {
     for (let i = 1; i <= 4; i++) {
         document.getElementById('color-' + i).style.width = '50%';
         document.getElementById('color-' + i).style.height = '50%';
+        document.getElementById('key-' + i).style.marginTop = '55%';
     }
 });
 
@@ -16,6 +17,7 @@ document.getElementById('grid2').addEventListener('click', function () {
     for (let i = 1; i <= 4; i++) {
         document.getElementById('color-' + i).style.width = '25%';
         document.getElementById('color-' + i).style.height = '100%';
+        document.getElementById('key-' + i).style.marginTop = '250%';
     }
 });
 
@@ -26,6 +28,7 @@ document.getElementById('grid3').addEventListener('click', function () {
         if (i <= 2) {
             document.getElementById('color-' + i).style.width = '50%';
             document.getElementById('color-' + i).style.height = '100%';
+            document.getElementById('key-' + i).style.marginTop = '130%';
         } else {
             var other_element = document.getElementById('color-' + i);
             other_element.remove();
@@ -40,9 +43,11 @@ document.getElementById('grid4').addEventListener('click', function () {
         if (i <= 1) {
             document.getElementById('color-' + i).style.width = '50%';
             document.getElementById('color-' + i).style.height = '100%';
+            document.getElementById('key-' + i).style.marginTop = '130%';
         } else if (i <= 3) {
             document.getElementById('color-' + i).style.width = '50%';
             document.getElementById('color-' + i).style.height = '50%';
+            document.getElementById('key-' + i).style.marginTop = '55%';
         } else {
             var other_element = document.getElementById('color-' + i);
             other_element.remove();
@@ -74,9 +79,7 @@ function reverse() {
 };
 
 // リロードされた時
-window.onload = function () {
-    generate();
-}
+window.onload = function () { generate(); }
 
 // ボタン：色を変更
 document.getElementById('generate').addEventListener('click', generate);

@@ -40,6 +40,12 @@ body {
 .color-4 {
     background-color: #afb3f7;
 }
+.key {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 55%;
+}
 
 .setting-section {
     height: 100%;
