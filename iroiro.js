@@ -55,21 +55,26 @@ document.getElementById('grid4').addEventListener('click', function () {
     }
 });
 
-// 色をランダムに生成
-function generate() {
+// 色をランダムに作成
+ var generate_color = function(i) {
+    const randomColor = Math.random().toString(16).slice(-6);
+    document.getElementById('color-' + i).style.background = '#' + randomColor;
+    color.push(randomColor);    
+}
+
+// 色を4つランダムに生成
+var get_four_colors = function() {
     count += 1;
     backcount = 0;
     for (let i = 1; i <= colorNum; i++) {
-        const randomColor = Math.random().toString(16).slice(-6);
-        document.getElementById('color-' + i).style.background = '#' + randomColor;
-        color.push(randomColor);
+        generate_color(i);
     }
     console.log(color);
     console.log(count);
 };
 
 // 前に出た色に戻る
-function reverse() {
+var reverse = function() {
     backcount += 1;
     for (let i = 1; i <= colorNum; i++) {
         document.getElementById('color-' + i).style.background = '#' + color[color.length - ((colorNum + 1 - i) + colorNum * backcount)];
@@ -79,10 +84,10 @@ function reverse() {
 };
 
 // リロードされた時
-window.onload = function () { generate(); }
+window.onload = function () { get_four_colors(); }
 
 // ボタン：色を変更
-document.getElementById('generate').addEventListener('click', generate);
+document.getElementById('generate').addEventListener('click', get_four_colors);
 
 // ボタン：戻る
 document.getElementById('reverse').addEventListener('click', reverse);
