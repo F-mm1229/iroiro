@@ -1,7 +1,9 @@
+
 var color = [];         //カラーコードを格納
 let count = 0;          //generateした回数
 let backcount = 0;      //reverseした回数
 let colorNum = 4;       //カラーの数（デフォルトは4）
+let key_control = 0;    //keyがopenの時は0
 
 // グリッド1
 document.getElementById('grid1').addEventListener('click', function () {
@@ -83,6 +85,17 @@ var reverse = function() {
     console.log(backcount);
 };
 
+// 鍵アイコン開閉
+var key_change = function (i) {
+    if (key_control == 0) {
+        document.getElementById('key-' + i).src = 'close_key.png';
+        key_control = 1;
+    } else {
+        document.getElementById('key-' + i).src = 'open_key.png';
+        key_control = 0;
+    }
+}
+
 // リロードされた時
 window.onload = function () { get_four_colors(); }
 
@@ -91,3 +104,9 @@ document.getElementById('generate').addEventListener('click', get_four_colors);
 
 // ボタン：戻る
 document.getElementById('reverse').addEventListener('click', reverse);
+
+// アイコン：鍵マーク
+document.getElementById('key-1').addEventListener('click', function () { key_change(1); });
+document.getElementById('key-2').addEventListener('click', function () { key_change(2); });
+document.getElementById('key-3').addEventListener('click', function () { key_change(3); });
+document.getElementById('key-4').addEventListener('click', function () { key_change(4); });
